@@ -1,0 +1,5 @@
+cultura,comprimento_m,largura_m,area_m2,area_ha,espacamento_linha_cm,espacamento_planta_cm,ruas,plantas,dose_insumo_kg_ha,insumo_total_kg,cidade,data_consulta_clima,temperatura_c,umidade_relativa_pct,vento_kmh,probabilidade_chuva_pct,alerta_climatico
+milho,300.0,300.0,90000.0,9.0,70.0,20.0,428,642000,300.0,2700.0,Sao Paulo,2026-03-21T15:00,29.4,43,4.1,0,Sem alertas climáticos no momento.
+milho,450.0,345.0,155250.0,15.525,90.0,20.0,383,861750,350.0,5433.75,Sao Paulo,2026-03-21T15:00,29.4,43,4.1,0,Sem alertas climáticos no momento.
+soja,234.0,200.0,46800.0,4.68,45.0,5.0,444,2077920,350.0,1638.0,Sao Paulo,2026-03-21T15:00,29.4,43,4.1,0,Sem alertas climáticos no momento.
+soja,123.0,200.0,24600.0,2.46,45.0,5.0,444,1092240,400.0,984.0,Sao Paulo,2026-03-21T15:00,29.4,43,4.1,0,Sem alertas climáticos no momento.
