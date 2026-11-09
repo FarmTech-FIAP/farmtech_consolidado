@@ -97,3 +97,44 @@ O sistema reúne os módulos desenvolvidos das Fases 1 a 6 em uma pasta única d
 ├── ir_alem_genetico.py
 ├── requirements.txt
 └── README.md
+```
+Instruções de Execução
+1. Pré-requisitos
+Python 3.10 ou superior instalado.
+
+Ambiente virtual configurado (recomendado).
+
+2. Instalação das Dependências
+Clone o repositório e, na pasta raiz do projeto, execute:
+
+```bash
+# Criação do ambiente virtual
+python3 -m venv venv
+
+# Ativação do ambiente (macOS/Linux)
+source venv/bin/activate
+
+# Ativação do ambiente (Windows)
+# venv\Scripts\activate
+
+# Instalação das bibliotecas
+pip install -r requirements.txt
+```
+
+3. Execução da Dashboard Unificada
+Para iniciar a interface web, execute:
+
+```bash
+streamlit run app.py
+O sistema abrirá automaticamente no navegador no endereço http://localhost:8501.
+```
+
+4. Acesso ao Sistema
+Usuários válidos: administrador ou teste
+
+Senha inicial: 123@teste
+
+No primeiro acesso, o sistema exigirá a redefinição da senha para liberação do painel principal.
+
+
+<FollowUp label="Quer o modelo do arquivo de texto único (entrega.txt) para envio no portal?" query="Gere o arquivo de texto entrega.txt com os 3 integrantes para envio na plataforma da FIAP."/>
