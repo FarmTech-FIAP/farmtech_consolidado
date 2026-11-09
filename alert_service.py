@@ -2,14 +2,13 @@ import boto3
 import os
 from botocore.exceptions import NoCredentialsError
 
-# No ambiente AWS Academy / Learner Lab, exporte as credenciais temporárias
+# Ambiente AWS Academy / Learner Lab, exporte as credenciais temporárias
 AWS_REGION = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
 SNS_TOPIC_ARN = os.getenv("SNS_TOPIC_ARN", "")
 
 def enviar_alerta_aws(assunto: str, mensagem: str, tipo="SIMULADO"):
     """
-    Envia alertas aos operadores da fazenda usando AWS SNS.
-    Se não houver credenciais ativas, gera log em modo de contingência/simulação.
+    Envia alertas aos operadores usando AWS SNS.
     """
     if tipo == "SIMULADO" or not SNS_TOPIC_ARN:
         return {
