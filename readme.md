@@ -2,72 +2,121 @@
 
 <p align="center">
   <a href="https://www.fiap.com.br/">
-    <img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width="40%">
+    <img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width="35%">
   </a>
 </p>
 
-<br>
+---
 
 # FarmTech Solutions — Fase 7 | A Consolidação de um Sistema
 
-## Nome do grupo
-**FarmTech Solutions**
+## 📋 Informações do Projeto
+- **Curso:** Inteligência Artificial aplicada à Agricultura 4.0
+- **Fase:** 7 — A Consolidação de um Sistema (Capítulo 1)
+- **Startup Acadêmica:** FarmTech Solutions
 
-## Integrantes
-- Caroline Coelho Mendes — RM570370
-- Leandro Paiva — RM572159
-- Lucas Viana de Lima — RM571835
+## 👥 Integrantes do Grupo
+- **Caroline Coelho Mendes** — RM 570370
+- **Leandro Paiva** — RM 572159
+- **Lucas Viana de Lima** — RM 571835
 
-## Professores
-### Tutor(a)
-- Lucas Gomes
-
-### Coordenador(a)
-- Prof. Dr. Rodrigo Mangoneli
-
----
-
-## Vídeo Demonstrativo
-- **Link do Vídeo no YouTube (Não Listado):** [INSERIR_LINK_AQUI]
+## 👨‍🏫 Corpo Docente
+- **Tutor(a):** Lucas Gomes
+- **Coordenador(a):** Prof. Dr. Rodrigo Mangoneli
 
 ---
 
-## Descrição do Projeto
+## 📖 Visão Geral e Arquitetura Consolidada
 
-Na sétima e última etapa do projeto da FIAP, a **FarmTech Solutions** consolida todos os serviços construídos ao longo do ano em uma solução integrada de Agricultura 4.0. 
+A **FarmTech Solutions** conclui seu ciclo de inovação consolidando em uma estação operacional unificada todas as soluções desenvolvidas da Fase 1 à Fase 6. O ecossistema transforma medições agrícolas isoladas em um ambiente integrado de **Agricultura 4.0**, agregando:
+1. **Engenharia de Dados & Clima (Fase 1):** Dimensionamento e manejo de talhões, estimativas de NPK e integração de API meteorológica pública de São Paulo com análise estatística em R.
+2. **IoT, Telemetria & Automação de Irrigação (Fase 2):** Sensores de umidade de solo, microclima (DHT22) e nutrientes em microcontrolador ESP32 com acionamento inteligente de bombas d'água.
+3. **Banco de Dados Estruturado (Fase 3):** Modelagem relacional e persistência estruturada de telemetria e controle em Oracle Database.
+4. **Data Science & Aprendizado de Máquina (Fase 4):** Modelos de regressão preditiva para estimativa de produtividade de safra (`crop_yield.csv`).
+5. **Computação em Nuvem & Segurança (Fase 5):** Arquitetura segura na nuvem AWS, gestão de identidade (IAM) e conformidade com boas práticas (ISO 27001).
+6. **Visão Computacional & Redes Neurais (Fase 6):** Pipeline de detecção de objetos via YOLOv5 para monitoramento visual em campo (bovinos e maquinário agrícola).
+7. **Consolidação & Mensageria Cloud (Fase 7):** Dashboard única responsiva (Streamlit), autenticação simulada com troca obrigatória de credenciais, gestão ativa de talhões e sistema de alertas em nuvem via **Amazon SNS**.
 
-O sistema reúne os módulos desenvolvidos das Fases 1 a 6 em uma pasta única de projeto e disponibiliza uma **Dashboard central em Streamlit** que permite a operação, o monitoramento e o disparo de cada serviço por interface ou linha de comando. Além disso, a aplicação conta com um módulo de mensageria na nuvem da **AWS (Amazon SNS)** para envio de alertas e ações corretivas aos operadores agrícolas com base nos dados de telemetria e visão computacional.
+### Diagrama Arquitetural do Ecossistema
 
-### Serviços Consolidados:
-- **Fase 1 (Base de Dados Inicial e Clima):** Dimensionamento de talhões agrícolas, estimativas de insumos e consumo de dados meteorológicos via API pública de São Paulo.
-- **Fase 2 (IoT e Automação):** Simulação de telemetria com ESP32 (sensores DHT22 de temperatura/umidade e monitoramento de nutrientes) com lógica de acionamento automático de bomba de irrigação.
-- **Fase 3 (Banco de Dados Estruturado):** Modelagem e persistência de dados operacionais e de telemetria em tabelas relacionais do Oracle Database.
-- **Fase 4 (Machine Learning e Manejo):** Análise de dados e modelo preditivo de produtividade agrícola com base em variáveis climáticas e de solo.
-- **Fase 5 (Cloud Computing & Segurança):** Definição da arquitetura segura na nuvem AWS, com políticas de acesso e conformidade (ISO 27001).
-- **Fase 6 (Visão Computacional):** Identificação e monitoramento no campo utilizando redes neurais convolucionais e modelos YOLOv5 (classes: vaca e equipamento pesado).
-- **Fase 7 (Consolidação e Mensageria AWS):** Dashboard unificada com controle de autenticação, redefinição de credenciais, gestão dinâmica de talhões e disparo de notificações via Amazon SNS.
+```text
+       [ Sensores de Campo: DHT22 / Umidade / ESP32 ]       [ Câmeras de Monitoramento / YOLOv5 ]
+                              │                                                │
+                              ▼                                                ▼
+              [ Ingestão e Processamento Local / Streamlit (app.py) ]
+                                      │
+              ┌───────────────────────┴───────────────────────┐
+              ▼                                               ▼
+[ Banco Relacional Oracle / Telemetria ]     [ Camada Cloud AWS: Amazon SNS ]
+                                                              │
+                                            ┌─────────────────┴─────────────────┐
+                                            ▼                                   ▼
+                               [ Alertas via E-mail ]                  [ Alertas via SMS ]
+                                      │                                         │
+                                      └─────────────────┬───────────────────────┘
+                                                        ▼
+                                       [ Ações Corretivas Operacionais ]
+```
 
 ---
 
-## Desafios Ir Além (Opcionais Realizados)
+## Serviço de Alertas na Nuvem (Amazon SNS)
 
-### Ir Além 1 — Reconhecimento de Imagens via AWS Rekognition
-- Demonstração prática da arquitetura de inteligência artificial gerenciada na nuvem.
-- Pipeline com armazenamento em bucket Amazon S3 e inferência via API `DetectLabels` do AWS Rekognition para detecção automatizada de animais e maquinários no campo, estruturado para limites de conta de estudante (Learner Lab).
+O módulo de mensageria (`alert_service.py`) monitora anomalias de sensores (umidade < 30% ou temperatura > 35°C) e eventos da visão computacional (bovinos próximos às plantações) e encaminha alertas estruturados aos colaboradores da fazenda.
 
-### Ir Além 2 — Otimização de Recursos com Algoritmos Genéticos
-- Aplicação de Algoritmo Genético adaptado ao problema da mochila binária para alocação ótima de água e insumos entre 12 talhões da fazenda.
-- Reprodutibilidade assegurada pela persistência da base em `services/ir_alem/insumos_otimizacao.csv`.
-- Implementação e comparação de estratégias de seleção estruturantes (**Roleta** vs. **Torneio**), com visualização gráfica da curva de convergência das gerações no notebook `IR ALÉM/otimizacao_genetica.ipynb` e na dashboard.
+### Regras de Negócio e Ações Corretivas Implementadas:
+1. **Alerta de Estresse Hídrico:**
+   - *Gatilho:* Umidade do solo inferior a 30%.
+   - *Ação Corretiva Sugerida:* Ligar imediatamente o sistema de irrigação automatizado do setor afetado pelo período de 45 minutos.
+2. **Alerta Térmico Crítico:**
+   - *Gatilho:* Temperatura ambiente superior a 35°C.
+   - *Ação Corretiva Sugerida:* Monitorar a taxa de evapotranspiração da lavoura e planejar turnos de irrigação noturna.
+3. **Alerta de Segurança & Intrusão:**
+   - *Gatilho:* Detecção visual de bovino com confiança > 60%.
+   - *Ação Corretiva Sugerida:* Despachar equipe de manejo para contenção imediata e vistoria das cercas do piquete correspondente.
+
+### Configuração no AWS Console (Amazon Simple Notification Service)
+- **Nome do Tópico SNS:** `FarmTechAlerts`
+- **Tipo de Tópico:** Standard
+- **Protocolos de Inscrição:** E-mail e SMS
+- **Região Utilizada:** `us-east-1` (Norte da Virgínia)
+
+*(Para inclusão na entrega: adicione as capturas de tela do console do Amazon SNS com o tópico criado e a assinatura confirmada na pasta `assets/` e vincule abaixo)*
+```markdown
+![Configuração do Tópico SNS](assets/aws_sns_topic.png)
+```
 
 ---
 
-## Estrutura de Pastas do Repositório
+## Desafios "Ir Além" (Atividades Complementares)
+
+### Ir Além 1: IA Gerenciada na AWS (AWS Rekognition)
+- **Proposta:** Transferência da inferência de visão computacional para a nuvem da AWS via serviço gerenciado Amazon Rekognition.
+- **Estrutura:** Integração simulada do upload em bucket S3 (`farmtech-visoes-upload`) conectado ao gatilho da API `DetectLabels` para reconhecimento de rebanhos e maquinário.
+- **Salvaguarda de Estudante:** Configuração arquitetural otimizada com mecanismo de contingência para evitar esgotamento dos créditos do AWS Learner Lab.
+- **Arquivo Documental:** `IR ALÉM/ir_alem_aws_rekognition.md`
+
+### Ir Além 2: Otimização de Recursos com Algoritmos Genéticos
+- **Proposta:** Aplicação de Algoritmos Genéticos (baseados na metáfora da mochila binária multidimensional) para selecionar o plano ideal de cultivo e irrigação entre 12 talhões agrícolas.
+- **Critérios de Otimização:** Maximizar a produtividade total em sacas sem ultrapassar a cota hídrica (700 m³) e o teto orçamentário (R$ 25 mil).
+- **Reprodutibilidade:** Base de dados de entrada fixada e gravada em `services/ir_alem/insumos_otimizacao.csv`.
+- **Comparação Experimental:** Avaliação estrutural comparativa entre seleção por **Roleta** e seleção por **Torneio**, com medição de tempo de convergência e gráfico da curva de aptidão (fitness).
+- **Notebook Oficial:** `IR ALÉM/otimizacao_genetica.ipynb`
+
+---
+
+## 📁 Estrutura de Pastas e Arquivos do Repositório
 
 ```text
 .
 ├── assets/
-│   └── logo-fiap.png
+│   ├── logo-fiap.png
+│   └── aws_sns_topic.png
+├── IR ALÉM 1/
+│   ├── ir_alem_aws_rekognition.md
+│   └── otimizacao_genetica.ipynb
+├── IR ALÉM 2/
+│   └── ir_alem_genetico.py
 ├── services/
 │   ├── fase1_planejamento/
 │   │   ├── analise_farmtech.R
@@ -85,56 +134,86 @@ O sistema reúne os módulos desenvolvidos das Fases 1 a 6 em uma pasta única d
 │   ├── fase5_nuvem/
 │   │   ├── crop_yield.csv
 │   │   └── infra_aws.md
-│   ├── fase6_visao/
-│   │   └── CarolineCoelhoMendes_rm570370_pbl_fase6.ipynb
-│   └── ir_alem/
-│       └── insumos_otimizacao.csv
-├── IR ALÉM/
-│   ├── ir_alem_aws_rekognition.md
-│   └── otimizacao_genetica.ipynb
+│   └── fase6_visao/
+│       └── CarolineCoelhoMendes_rm570370_pbl_fase6.ipynb
 ├── alert_service.py
 ├── app.py
 ├── ir_alem_genetico.py
 ├── requirements.txt
 └── README.md
 ```
-Instruções de Execução
+
+---
+
+## 🚀 Instruções de Instalação e Execução
+
 ### 1. Pré-requisitos
-Python 3.10 ou superior instalado.
+- Python versão 3.10 ou superior.
+- Git instalado.
+- Acesso à internet para download de pacotes.
 
-Ambiente virtual configurado (recomendado).
+### 2. Preparação do Ambiente Virtual
+No terminal da sua máquina (VS Code ou terminal do sistema operacional), execute:
 
-### 2. Instalação das Dependências
-Clone o repositório e, na pasta raiz do projeto, execute:
-
+- **No macOS / Linux:**
 ```bash
-# Criação do ambiente virtual
+# Criar o ambiente virtual
 python3 -m venv venv
 
-# Ativação do ambiente (macOS/Linux)
+# Ativar o ambiente virtual
 source venv/bin/activate
+```
 
-# Ativação do ambiente (Windows)
-# venv\Scripts\activate
+- **No Windows:**
+```bash
+# Criar o ambiente virtual
+python -m venv venv
 
-# Instalação das bibliotecas
+# Ativar o ambiente virtual
+venv\Scripts\activate
+```
+
+Instale as dependências compiladas do projeto:
+```bash
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. Execução da Dashboard Unificada
-Para iniciar a interface web, execute:
+### 3. Execução da Aplicação Principal (Dashboard)
+Inicie a plataforma com o comando:
 
 ```bash
 streamlit run app.py
-O sistema abrirá automaticamente no navegador no endereço http://localhost:8501.
 ```
 
-### 4. Acesso ao Sistema
-Usuários válidos: administrador ou teste
+O navegador abrirá automaticamente no endereço: `http://localhost:8501`.
 
-Senha inicial: 123@teste
+### 4. Credenciais de Acesso e Segurança
+O sistema conta com tela de autenticação funcional:
+- **Usuário Administrador:** `administrador`
+- **Usuário de Teste:** `teste`
+- **Senha Provisória Padrão:** `123@teste`
 
-No primeiro acesso, o sistema exigirá a redefinição da senha para liberação do painel principal.
+*Observação sobre o primeiro acesso:* Ao efetuar o login com a senha provisória `123@teste`, a aplicação exigirá a redefinição simulada de senha para liberação do painel completo da fazenda.
 
+### 5. Execução do Notebook de Algoritmos Genéticos (Ir Além 2)
+Para executar e reproduzir as análises estatísticas do algoritmo genético:
 
-<FollowUp label="Quer o modelo do arquivo de texto único (entrega.txt) para envio no portal?" query="Gere o arquivo de texto entrega.txt com os 3 integrantes para envio na plataforma da FIAP."/>
+```bash
+jupyter notebook "IR ALÉM/otimizacao_genetica.ipynb"
+```
+
+---
+
+## 🎥 Vídeo Demonstrativo da Solução Integrada
+- **Link do Vídeo no YouTube (Não Listado):** [INSERIR_LINK_DO_VIDEO_AQUI]
+- *Duração máxima:* até 10 minutos
+- *Conteúdo demonstrado:* Visão geral da arquitetura, estrutura de pastas unificada, login e redefinição de segurança, navegação pelas Fases 1 a 6 integradas na Dashboard Streamlit, acionamento em tempo real do serviço de mensageria AWS SNS com ações corretivas, e execução dos desafios Ir Além 1 e Ir Além 2.
+
+---
+
+## 📄 Protocolo de Submissão
+
+Conforme estipulado no edital de avaliação da Fase 7:
+1. Este repositório GitHub é mantido **Privado** e compartilhado exclusivamente com o usuário colaborador oficial: **`fiap-tutoria`**.
+2. O arquivo único submetido no Portal do Aluno é formatado como `.txt`, contendo os dados dos integrantes, o link direto do repositório privado e o link do vídeo demonstrativo hospedado no YouTube (modo não listado).
