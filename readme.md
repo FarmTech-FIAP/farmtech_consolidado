@@ -99,12 +99,12 @@ O sistema reúne os módulos desenvolvidos das Fases 1 a 6 em uma pasta única d
 └── README.md
 ```
 Instruções de Execução
-1. Pré-requisitos
+### 1. Pré-requisitos
 Python 3.10 ou superior instalado.
 
 Ambiente virtual configurado (recomendado).
 
-2. Instalação das Dependências
+### 2. Instalação das Dependências
 Clone o repositório e, na pasta raiz do projeto, execute:
 
 ```bash
@@ -121,7 +121,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Execução da Dashboard Unificada
+### 3. Execução da Dashboard Unificada
 Para iniciar a interface web, execute:
 
 ```bash
@@ -129,7 +129,7 @@ streamlit run app.py
 O sistema abrirá automaticamente no navegador no endereço http://localhost:8501.
 ```
 
-4. Acesso ao Sistema
+### 4. Acesso ao Sistema
 Usuários válidos: administrador ou teste
 
 Senha inicial: 123@teste
