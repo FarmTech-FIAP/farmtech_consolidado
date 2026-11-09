@@ -81,10 +81,29 @@ O módulo de mensageria (`alert_service.py`) monitora anomalias de sensores (umi
 - **Protocolos de Inscrição:** E-mail e SMS
 - **Região Utilizada:** `us-east-1` (Norte da Virgínia)
 
-*(Para inclusão na entrega: adicione as capturas de tela do console do Amazon SNS com o tópico criado e a assinatura confirmada na pasta `assets/` e vincule abaixo)*
-```markdown
-![Configuração do Tópico SNS](assets/aws_sns_topic.png)
-```
+## Configuracao do Servico de Alertas na AWS (Amazon SNS)
+
+Para atender a parte de mensageria da Fase 7, usamos o Amazon SNS no ambiente do AWS Academy Learner Lab para avisar a equipe da fazenda sobre problemas no campo.
+
+### Etapas realizadas:
+1. Criamos um topico padrao chamado `FarmTechAlerts` para centralizar as mensagens.
+2. Cadastramos uma inscricao por e-mail para receber as notificacoes de emergencia.
+3. Confirmamos o endpoint pelo link de validacao enviado pela AWS.
+4. Testamos o envio de alerta simulando o sensor de umidade abaixo do limite (22%), recebendo a acao corretiva direto na caixa de entrada.
+
+### Evidencias do Console:
+
+**Topico criado no Amazon SNS:**
+![Topico SNS](assets/aws_prints/01_sns_topico_criado.png)
+
+**Inscricao pendente de confirmacao:**
+![Inscricao Pendente](assets/aws_prints/02_sns_subscription_pendente.png)
+
+**Inscricao confirmada:**
+![Inscricao Confirmada](assets/aws_prints/03_sns_subscription_confirmada.png)
+
+**Mensagem de alerta e acao corretiva recebida por e-mail:**
+![Alerta no Email](assets/aws_prints/04_email_alerta_recebido.png)
 
 ---
 
@@ -95,6 +114,11 @@ O módulo de mensageria (`alert_service.py`) monitora anomalias de sensores (umi
 - **Estrutura:** Integração simulada do upload em bucket S3 (`farmtech-visoes-upload`) conectado ao gatilho da API `DetectLabels` para reconhecimento de rebanhos e maquinário.
 - **Salvaguarda de Estudante:** Configuração arquitetural otimizada com mecanismo de contingência para evitar esgotamento dos créditos do AWS Learner Lab.
 - **Arquivo Documental:** `IR ALÉM/ir_alem_aws_rekognition.md`
+
+- **Detecção de rótulos (Label Detection) com imagem de monitoramento rural:**
+![Demonstração AWS Rekognition](assets/aws_prints/05_rekognition_demo.png)
+
+*Nota: Os testes foram conduzidos no painel interativo do AWS Rekognition para validação dos índices de confiança e categorias de detecção sem consumo de créditos da conta de estudante.*
 
 ### Ir Além 2: Otimização de Recursos com Algoritmos Genéticos
 - **Proposta:** Aplicação de Algoritmos Genéticos (baseados na metáfora da mochila binária multidimensional) para selecionar o plano ideal de cultivo e irrigação entre 12 talhões agrícolas.
@@ -111,7 +135,12 @@ O módulo de mensageria (`alert_service.py`) monitora anomalias de sensores (umi
 .
 ├── assets/
 │   ├── logo-fiap.png
-│   └── aws_sns_topic.png
+│   └── aws_prints/
+│       ├── 01_sns_topico_criado.png
+│       ├── 02_sns_subscription_pendente.png
+│       ├──03_sns_subscription_confirmada.png
+│       ├── 04_email_alerta_recebido.png
+|       └── 05_rekognition_demo.png
 ├── IR ALÉM 1/
 │   ├── ir_alem_aws_rekognition.md
 │   └── otimizacao_genetica.ipynb
