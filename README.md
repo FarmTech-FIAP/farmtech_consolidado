@@ -265,13 +265,13 @@ jupyter notebook "ir além/otimizacao_genetica.ipynb"
 ---
 
 ## 🎥 Vídeo Demonstrativo da Solução Integrada
-- **Link do Vídeo no YouTube (Não Listado):** https://youtu.be/cXJksxztoyk
+- **Link do Vídeo no YouTube:** https://youtu.be/cXJksxztoyk
 - *Conteúdo demonstrado:* Visão geral da arquitetura, estrutura de pastas unificada, login e redefinição de segurança, navegação pelas Fases 1 a 6 integradas na Dashboard Streamlit, acionamento em tempo real do serviço de mensageria AWS SNS com ações corretivas, e execução dos desafios Ir Além 1 e Ir Além 2.
 
 ---
 
 ## 📄 Protocolo de Submissão
 
-Conforme estipulado no edital de avaliação da Fase 7:
+Conforme estipulado na avaliação da Fase 7:
 1. Este repositório GitHub é mantido **Privado** e compartilhado exclusivamente com o usuário colaborador oficial: **`fiap-tutoria`**.
 2. O arquivo único submetido no Portal do Aluno é formatado como `.txt`, contendo os dados dos integrantes, o link direto do repositório privado e o link do vídeo demonstrativo hospedado no YouTube (modo não listado).
