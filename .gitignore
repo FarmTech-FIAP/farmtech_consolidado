@@ -1,0 +1,14 @@
+# Arquivo com as chaves reais da AWS (NUNCA subir para o GitHub)
+.env
+
+# Ambiente virtual do Python
+venv/
+env/
+
+# Arquivos temporarios e de cache do Python e mac
+__pycache__/
+*.pyc
+.DS_Store
+
+# Logs e arquivos locais do Streamlit
+.streamlit/
