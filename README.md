@@ -64,9 +64,27 @@ A **FarmTech Solutions** conclui seu ciclo de inovação consolidando em uma est
 
 ---
 
-## Serviço de Alertas na Nuvem (Amazon SNS)
+## Boas Práticas de Segurança e Proteção de Credenciais
 
-O módulo de mensageria (`alert_service.py`) monitora anomalias de sensores (umidade < 30% ou temperatura > 35°C) e eventos da visão computacional (bovinos próximos às plantações) e encaminha alertas estruturados aos colaboradores da fazenda.
+Em conformidade com os padrões da ISO 27001 e OWASP:
+
+Proteção de Tokens da AWS: Nenhuma chave (aws_access_key_id, aws_secret_access_key ou aws_session_token) está gravada nos arquivos de código. As credenciais são carregadas localmente a partir de um arquivo .env gerenciado pela biblioteca python-dotenv.
+
+Configuração de .gitignore: O arquivo .env está explicitamente cadastrado no .gitignore, impedindo o versionamento ou vazamento de segredos de estudante para o Git. Para fins de avaliação, o repositório disponibiliza apenas o arquivo .env.example.
+
+Política de Senha Provisória: O sistema detecta o primeiro acesso realizado com a senha padrão (123@teste) e exige a redefinição de segurança antes de liberar o painel de operações agrícolas. Em ambiente produtivo, tais credenciais são protegidas com funções de dispersão unidirecionais com salting (hashing criptográfico).
+
+## Serviço de Mensageria e Diagnóstico por IA (Amazon SNS)
+
+O módulo alert_service.py substituiu regras condicionais rígidas (if/else) por um modelo de Machine Learning (DecisionTreeClassifier) treinado com histórico de campo.
+
+O modelo analisa as leituras de telemetria (umidade do solo e temperatura) e infere a condição fisiológica do talhão com seu respectivo índice de confiança, estruturando a notificação de forma autônoma:
+
+Estresse Hídrico Crítico: Ação corretiva recomendando acionamento imediato das bombas de irrigação do setor por 45 minutos.
+
+Estresse Térmico Elevado: Ação corretiva sugerindo suspensão de pulverização diurna e programação de irrigação de mitigação noturna.
+
+Condição Agronômica Normal: Rotina mantida sem necessidade de despacho operacional.
 
 ### Regras de Negócio e Ações Corretivas Implementadas:
 1. **Alerta de Estresse Hídrico:**
