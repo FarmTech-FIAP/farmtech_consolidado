@@ -134,18 +134,16 @@ Para atender a parte de mensageria da Fase 7, usamos o Amazon SNS no ambiente do
 ```text
 .
 ├── assets/
-│   ├── logo-fiap.png
 │   └── aws_prints/
-│       ├── 01_sns_topico_criado.png
-│       ├── 02_sns_subscription_pendente.png
-│       ├──03_sns_subscription_confirmada.png
-│       ├── 04_email_alerta_recebido.png
-|       └── 05_rekognition_demo.png
+│   │   ├── 01_sns_topico_criado.png
+│   │   ├── 02_sns_subscription_pendente.png
+│   │   ├── 03_sns_subscription_confirmada.png
+│   │   ├── 04_email_alerta_recebido.png
+|   |   └── 05_rekognition_demo.png
+│   ├── logo-fiap.png
 ├── IR ALÉM 1/
 │   ├── ir_alem_aws_rekognition.md
 │   └── otimizacao_genetica.ipynb
-├── IR ALÉM 2/
-│   └── ir_alem_genetico.py
 ├── services/
 │   ├── fase1_planejamento/
 │   │   ├── analise_farmtech.R
@@ -165,11 +163,11 @@ Para atender a parte de mensageria da Fase 7, usamos o Amazon SNS no ambiente do
 │   │   └── infra_aws.md
 │   └── fase6_visao/
 │       └── CarolineCoelhoMendes_rm570370_pbl_fase6.ipynb
+├── README.md
 ├── alert_service.py
 ├── app.py
 ├── ir_alem_genetico.py
-├── requirements.txt
-└── README.md
+└── requirements.txt
 ```
 
 ---
