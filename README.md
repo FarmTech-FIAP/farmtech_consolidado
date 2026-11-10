@@ -20,9 +20,13 @@
 - **Leandro Paiva** — RM 572159
 - **Lucas Viana de Lima** — RM 571835
 
-## 👨‍🏫 Corpo Docente
-- **Tutor(a):** Lucas Gomes
-- **Coordenador(a):** Prof. Dr. Rodrigo Mangoneli
+## 👩‍🏫 Professores
+
+### Tutor(a)
+- **[INSERIR NOME DO(A) TUTOR(A)]**
+
+### Coordenador(a)
+- **[INSERIR NOME DO(A) COORDENADOR(A)]**
 
 ---
 
