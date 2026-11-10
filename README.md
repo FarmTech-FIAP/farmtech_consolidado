@@ -145,7 +145,7 @@ Para atender a parte de mensageria da Fase 7, usamos o Amazon SNS no ambiente do
 │   │   ├── 04_email_alerta_recebido.png
 |   |   └── 05_rekognition_demo.png
 │   ├── logo-fiap.png
-├── IR ALÉM 1/
+├── ir além/
 │   ├── ir_alem_aws_rekognition.md
 │   └── otimizacao_genetica.ipynb
 ├── services/
