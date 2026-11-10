@@ -167,6 +167,8 @@ Para atender a parte de mensageria da Fase 7, usamos o Amazon SNS no ambiente do
 │   │   └── infra_aws.md
 │   └── fase6_visao/
 │       └── CarolineCoelhoMendes_rm570370_pbl_fase6.ipynb
+├── .env.example
+├── .gitignore
 ├── README.md
 ├── alert_service.py
 ├── app.py
@@ -210,7 +212,15 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. Execução da Aplicação Principal (Dashboard)
+### 3. Configuração de Variáveis de Ambiente
+Copie o modelo de ambiente para criar seu arquivo local:
+
+```bash
+cp .env.example .env
+```
+Abra o .env e preencha com as credenciais ativas do AWS Academy Learner Lab e do tópico SNS criado.
+
+### 4. Execução da Aplicação Principal (Dashboard)
 Inicie a plataforma com o comando:
 
 ```bash
@@ -219,26 +229,25 @@ streamlit run app.py
 
 O navegador abrirá automaticamente no endereço: `http://localhost:8501`.
 
-### 4. Credenciais de Acesso e Segurança
+### 5. Credenciais de Acesso Inicial
 O sistema conta com tela de autenticação funcional:
 - **Usuário Administrador:** `administrador`
 - **Usuário de Teste:** `teste`
 - **Senha Provisória Padrão:** `123@teste`
 
-*Observação sobre o primeiro acesso:* Ao efetuar o login com a senha provisória `123@teste`, a aplicação exigirá a redefinição simulada de senha para liberação do painel completo da fazenda.
+*Observação sobre o primeiro acesso:* Ao efetuar o login com a senha provisória `123@teste`, a aplicação exigirá a redefinição simulada de senha para liberação do painel.
 
-### 5. Execução do Notebook de Algoritmos Genéticos (Ir Além 2)
+### 6. Execução do Notebook de Algoritmos Genéticos (Ir Além 2)
 Para executar e reproduzir as análises estatísticas do algoritmo genético:
 
 ```bash
-jupyter notebook "IR ALÉM/otimizacao_genetica.ipynb"
+jupyter notebook "ir além/otimizacao_genetica.ipynb"
 ```
 
 ---
 
 ## 🎥 Vídeo Demonstrativo da Solução Integrada
-- **Link do Vídeo no YouTube (Não Listado):** [INSERIR_LINK_DO_VIDEO_AQUI]
-- *Duração máxima:* até 10 minutos
+- **Link do Vídeo no YouTube (Não Listado):** https://youtu.be/cXJksxztoyk
 - *Conteúdo demonstrado:* Visão geral da arquitetura, estrutura de pastas unificada, login e redefinição de segurança, navegação pelas Fases 1 a 6 integradas na Dashboard Streamlit, acionamento em tempo real do serviço de mensageria AWS SNS com ações corretivas, e execução dos desafios Ir Além 1 e Ir Além 2.
 
 ---
